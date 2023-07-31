@@ -1,0 +1,105 @@
+{% extends "game_layout.html" %}
+
+
+{% block title %}
+    Expert
+{% endblock %}
+
+
+{% block main %}
+    <div>
+        <table class="game_difficulty_select">
+            <tr>
+                <td class="game_difficulty_select_data"><a href="/game-easy">Beginner</a></td>
+                <td class="game_difficulty_select_data"><a href="/game-medium">Intermediate</a></td>
+                <td class="game_difficulty_select_data"><a href="/game-hard"><b>Expert</b></a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info_and_game_div" style="width:842px">
+        <div>
+            <table class="info_table">
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <th style="width:100px">Time</th>
+                            </tr>
+                            <tr>
+                                <td id="seconds" class="info_cell">0</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td class="info_cell"><form action="/game-hard" method="get"><button id="infobox" type="submit" style="background-color:#EEE;margin-top:5px;width:640px"><img id="reset_cat" src="/static/cat_neutral.png" style="width:36px"></button></form></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th style="width:100px">Mines</th>
+                            </tr>
+                            <tr>
+                                <td class="info_cell" id="mines_left">99</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table id="game_table_id" class="game_table" cellspacing="0">
+                {% for i in range(16) %}
+                    <tr class="game_table_row">
+                        {% for j in range(30) %}
+                            <td class="game_cell"><button class="game_button" id="{{ 'r' + (i | string) + 'c' + (j | string) }}"></button></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+    <div>
+        <h4 style="font-size:1.2rem">Hall of Fame</h4>
+        <table class ="high_score_table">
+            {% for i in range(high_scores | length) %}
+                <tr class = "high_score_row">
+                    <td class="high_score_data">{{ i + 1 }}</td>
+                    {% if i == 0 %}
+                        <td class="high_score_data">{{ high_scores[i]['name'] }} &#128081</td>
+                    {% else %}
+                        <td class="high_score_data">{{ high_scores[i]['name'] }}</td>
+                    {% endif %}
+                    <td class="high_score_data">{{ high_scores[i]['time'] }}</td>
+                </tr>
+            {% endfor %}
+
+            {% if (high_scores | length) != 10 %}
+                {% for j in range(10 - (high_scores | length)) %}
+                    <tr>
+                        <td class="high_score_data">{{ j + (high_scores | length) + 1 }}</td>
+                        <td class="high_score_data"> - </td>
+                        <td class="high_score_data"> - </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+
+    <script src="{{url_for('static', filename='game.js')}}"></script>
+    {% if os == "Mac" %}
+        <script src="{{url_for('static', filename='controls_mac.js')}}"></script>
+    {% elif os == "Windows" %}
+        <script src="{{url_for('static', filename='controls.js')}}"></script>
+    {% else %}
+        <script src="{{url_for('static', filename='controls_mobile.js')}}"></script>
+    {% endif %}
+
+{% endblock %}

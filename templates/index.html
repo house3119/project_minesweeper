@@ -1,0 +1,23 @@
+{% extends "game_layout.html" %}
+
+
+{% block title %}
+    Project Minesweeper
+{% endblock %}
+
+
+{% block main %}
+    <div id="index4">
+        <img src="/static/kenusweep_logo.png" style="height:50%;width:50%;margin-top:50px;border-radius:7px">
+        <p style="font-size:1.1rem"> Welcome to Project Minesweeper! Select a difficulty to start the game. If you need help on how to play, please click <a href="/controls"><b>here</b></a>.</p>
+        <div>
+            <table class="game_difficulty_select">
+                <tr>
+                    <td class="game_difficulty_select_data"><a href="/game-easy"><b>Beginner</b></a></td>
+                    <td class="game_difficulty_select_data"><a href="/game-medium"><b>Intermediate</b></a></td>
+                    <td class="game_difficulty_select_data"><a href="/game-hard"><b>Expert</b></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

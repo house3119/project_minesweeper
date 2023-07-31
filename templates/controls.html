@@ -1,0 +1,38 @@
+{% extends "game_layout.html" %}
+
+
+{% block title %}
+    Controls
+{% endblock %}
+
+
+
+{% block main %}
+
+<div style="margin-top:25px">
+    <div class="control_text_div">
+        <h3 style="text-align:center">What is Minesweeper?</h3>
+        <p>Minesweeper is classic logic puzzle game, that has its roots all the way back in the 1980's. </p>
+        <p>The goal of the game is to open all cells without hitting ones with mines. Number in an opened cell tells how many mines are in the surrounding cells. You can also flag an unopened cell that you suspect is a mine, this prevents you from accidentally opening it.</p>
+        <p >If number of an opened cell is equal to number of flagged cells surrounding it, then you can open all unopened cells surrounding it with <i>chording</i>. Be careful though! If you flagged cells wrong, chording will likely trigger a mine!</p>
+        <p style="margin-bottom:50px">Please refer below for controls on different platforms.</p>
+    </div>
+
+    <div class="control_text_div">
+        <h3 style="text-align:center">Windows</h4>
+        <p style="margin-bottom:50px">Use <b>left mouse button</b> to open a cell and <b>right mouse button</b> to flag a cell. To unflag a cell, click it again with right mouse button. To trigger chording, press <b>left- and right mouse buttons</b> at the <b>same time</b>.</p>
+    </div>
+
+    <div class="control_text_div">
+     <!--   <table > -->
+        <h3 style="text-align:center">Mac</h4>
+        <p style="margin-bottom:50px">Use <b>left mouse button</b> to open a cell and <b>right mouse button</b> to flag a cell. You can also use <b>control + left mouse button</b> to flag. To trigger chording, you can press <b>left- and right mouse buttons</b> at the same time or use <b>double click</b>.</p>
+    </div>
+
+    <div class="control_text_div">
+        <h3 style="text-align:center">Mobile</h4>
+        <p style="margin-bottom:50px"><b>Tap</b> on a cell to open it. To flag a cell, use <b>long press</b> (over 0.5 sec). Your device should vibrate to indicate you have pressed long enough. To trigger chording, <b>double tap</b> on an empty cell.</p>
+    </div>
+</div>
+
+{% endblock %}

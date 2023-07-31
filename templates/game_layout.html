@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="/static/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="initial-scale=1, width=device-width" charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+    </head>
+
+    <!-- Responsive navbar from W3Schools-->
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active" style="font-weight:bold;color:#444" id="active_id">Project Minesweeper</a>
+        <div class="dropdown">
+          <button class="dropbtn">Game
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/game-easy">Beginner</a>
+            <a href="/game-medium">Intermediate</a>
+            <a href="/game-hard">Expert</a>
+          </div>
+        </div>
+        <a href="/controls">How to Play</a>
+        <a href="/stats">Stats</a>
+        <a href="/about" class="about_box">About</a>
+        <a href="/sorry" id="login_link">Login</a>
+        <a href="javascript:void(0);" style="font-size:15px" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+    <!-- Responsive navbar ends -->
+
+    <body id="body">
+        <div>
+            <b id="messagebox"></b>
+        </div>
+        <div>
+            <text hidden id="os_info">{{ os }}</text>
+            <text hidden id="difficulty_info">{{ difficulty }}</text>
+            <img hidden src="/static/number_1_icon-01.png">
+            <img hidden src="/static/number_2_icon-01.png">
+            <img hidden src="/static/number_3_icon-01.png">
+            <img hidden src="/static/number_4_icon-01.png">
+            <img hidden src="/static/number_5_icon-01.png">
+            <img hidden src="/static/number_6_icon-01.png">
+            <img hidden src="/static/number_7_icon-01.png">
+            <img hidden src="/static/number_8_icon-01.png">
+            <img hidden src="/static/mine_icon-01-red.png">
+            <img hidden src="/static/mine_icon-01.png">
+            <img hidden src="/static/grey.png">
+        </div>
+        {% block main %}{% endblock %}
+    </body>
+
+    <footer style="font-size:0.9rem;margin-top:50px">
+        <p>
+          Version: 1.0.0
+        </p>
+    </footer>
+</html>

@@ -1,0 +1,66 @@
+{% extends "game_layout.html" %}
+
+
+{% block title %}
+    Stats
+{% endblock %}
+
+
+
+{% block main %}
+    <div style="margin-top:25px">
+        <div>
+            <table style="margin-left:auto;margin-right:auto;margin-bottom:50px">
+                <h3>Beginner</h4>
+                <tr>
+                    <td class="high_score_data">Total games played</td>
+                    <td class="high_score_data">{{ beginner_stats['wins'] + beginner_stats['losses'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won</td>
+                    <td class="high_score_data">{{ beginner_stats['wins'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won (%)</td>
+                    <td class="high_score_data">{{ beginner_stats['win-p'] }}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table style="margin-left:auto;margin-right:auto;margin-bottom:50px">
+                <h3>Intermediate</h4>
+                <tr>
+                    <td class="high_score_data">Total games played</td>
+                    <td class="high_score_data">{{ intermediate_stats['wins'] + intermediate_stats['losses'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won</td>
+                    <td class="high_score_data">{{ intermediate_stats['wins'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won (%)</td>
+                    <td class="high_score_data">{{ intermediate_stats['win-p'] }}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table style="margin-left:auto;margin-right:auto;margin-bottom:50px">
+                <h3>Expert</h4>
+                <tr>
+                    <td class="high_score_data">Total games played</td>
+                    <td class="high_score_data">{{ expert_stats['wins'] + expert_stats['losses'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won</td>
+                    <td class="high_score_data">{{ expert_stats['wins'] }}</td>
+                </tr>
+                <tr>
+                    <td class="high_score_data">Games won (%)</td>
+                    <td class="high_score_data">{{ expert_stats['win-p'] }}%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
