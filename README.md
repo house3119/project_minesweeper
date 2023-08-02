@@ -38,3 +38,4 @@ All the static files the app uses are stored in ```/static``` -folder. This incl
 - ```horizontal.js``` Helper file for detecting landscape vs. portrait mode on mobile devices and adjusting the game area accordingly.
 
 ### Design and choices
+TODO
