@@ -42,6 +42,6 @@ The main feature of the site is the game, of course. I tried to make it feel as 
 
 Overall graphic design of the page could be improved quite a bit I feel. I probably should have used some kind of framework (Bootstrap) from the start to make things easier. I tried to implement it middle way through, but gave up shortly after. Still I feel the aesthetics and usability of the page are adequate. I quickly found out that playing around with HTML and CSS are not my favourite things. I enjoyed much more creating the game logic and solving problems there, rather than perfecting the visual side of things.
 
-Flask was the obvious choice for the backend framework, because it was introduced during the course. Originally I used CS50 library to interact with the database, but later switched to sqlite3 library. This was because I wanted to implement the game on cloud server to be able to share the game with my friends and family. You should go check it out too at [https://house31.pythonanywhere.com](https://house31.pythonanywhere.com)!
+Flask was the obvious choice for the backend framework, because it was introduced during the course. Originally I used CS50 library to interact with the database, but later switched to sqlite3 library. This was because I wanted to implement the game on cloud server to be able to share the game with my friends and family.
 
 Finally, I want to thank all of the CS50 crew for an absolutely amazing course! It was a lot of work and some problem sets were really tough, but it made it all the more satisfying to finaly solve them.
